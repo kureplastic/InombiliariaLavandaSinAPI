@@ -9,6 +9,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 
+
 import com.gonzalez.inombiliarialavanda.databinding.ActivityLoginBinding;
 import com.gonzalez.inombiliarialavanda.modelo.DeteccionMovimiento;
 
@@ -66,4 +67,5 @@ public class LoginActivity extends AppCompatActivity {
         super.onResume();
         deteccionMovimiento.startListening();
     }
+
 }

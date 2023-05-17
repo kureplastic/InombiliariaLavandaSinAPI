@@ -51,6 +51,7 @@ public class PerfilViewModel extends AndroidViewModel {
             Toast.makeText(context, "USUARIO ACTUALIZADO!", Toast.LENGTH_SHORT).show();
             mutableError.setValue("");
         }else {
+            Toast.makeText(context, "ERROR AL ACTUALIZAR!", Toast.LENGTH_SHORT).show();
             mutableError.setValue("Error, corrobore que todos los campos esten completos");
         }
     }
