@@ -113,10 +113,10 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:ems="10"
-        android:textColor="@color/white"
         android:enabled="false"
         android:hint="telefono"
-        android:inputType="phone" />
+        android:inputType="numberSigned"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/tvError"

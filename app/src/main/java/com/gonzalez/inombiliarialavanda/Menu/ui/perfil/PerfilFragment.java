@@ -20,7 +20,6 @@ import com.gonzalez.inombiliarialavanda.request.ApiClient;
 public class PerfilFragment extends Fragment {
 
     private FragmentPerfilBinding binding;
-    private Context context;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -51,15 +50,16 @@ public class PerfilFragment extends Fragment {
                 binding.etEmail.setEnabled(true);
                 binding.etPass.setEnabled(true);
                 binding.etTelefono.setEnabled(true);
+                binding.etDNI.setEnabled(true);
                 binding.btEditar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Propietario propietarioEditado = ApiClient.getApi().obtenerUsuarioActual();
                         propietarioEditado.setApellido(binding.etApellido.getText().toString());
                         propietarioEditado.setNombre(binding.etNombre.getText().toString());
-                        propietarioEditado.setTelefono(binding.etTelefono.toString());
-                        propietarioEditado.setEmail(binding.etEmail.toString());
-                        propietarioEditado.setContraseña(binding.etPass.toString());
+                        propietarioEditado.setTelefono(binding.etTelefono.getText().toString());
+                        propietarioEditado.setEmail(binding.etEmail.getText().toString());
+                        propietarioEditado.setContraseña(binding.etPass.getText().toString());
                         perfilViewModel.editarPerfil(propietarioEditado);
                     }
                 });

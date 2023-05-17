@@ -36,7 +36,8 @@ public class PerfilViewModel extends AndroidViewModel {
         if(propietario.getNombre().equals("") ||
                 propietario.getApellido().equals("") ||
                 propietario.getEmail().equals("") ||
-                propietario.getContraseña().equals(""))
+                propietario.getContraseña().equals("") ||
+                propietario.getDni().equals(""))
         {
             return false;
         }
