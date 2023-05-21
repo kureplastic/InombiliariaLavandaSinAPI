@@ -37,7 +37,6 @@ public class LoginActivityViewModel extends AndroidViewModel {
         else{
             Intent intent = new Intent(context, MenuActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            mutableError.setValue("");
             context.startActivity(intent);
         }
 
