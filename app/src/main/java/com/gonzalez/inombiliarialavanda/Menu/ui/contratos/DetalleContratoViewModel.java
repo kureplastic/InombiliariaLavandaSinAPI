@@ -15,6 +15,7 @@ import androidx.navigation.Navigation;
 
 import com.gonzalez.inombiliarialavanda.R;
 import com.gonzalez.inombiliarialavanda.modelo.Contrato;
+import com.gonzalez.inombiliarialavanda.modelo.Inmueble;
 import com.gonzalez.inombiliarialavanda.modelo.Pago;
 import com.gonzalez.inombiliarialavanda.request.ApiClient;
 
@@ -32,7 +33,8 @@ public class DetalleContratoViewModel extends AndroidViewModel {
     }
     public LiveData<Contrato> getMutableContrato(){ return mutableContrato;}
 
-    public void obtenerDatos(Contrato contrato){
+    public void obtenerDatos(Inmueble inmuebleRecuperado){
+        Contrato contrato = ApiClient.getApi().obtenerContratoVigente(inmuebleRecuperado);
         mutableContrato.setValue(contrato);
     }
 

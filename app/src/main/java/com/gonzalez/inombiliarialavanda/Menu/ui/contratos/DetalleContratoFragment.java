@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import com.gonzalez.inombiliarialavanda.R;
 import com.gonzalez.inombiliarialavanda.databinding.FragmentDetalleContratoBinding;
 import com.gonzalez.inombiliarialavanda.modelo.Contrato;
+import com.gonzalez.inombiliarialavanda.modelo.Inmueble;
 import com.gonzalez.inombiliarialavanda.modelo.Pago;
 import com.gonzalez.inombiliarialavanda.request.ApiClient;
 
@@ -38,8 +39,8 @@ public class DetalleContratoFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         detalleContratoViewModel = new ViewModelProvider(this).get(DetalleContratoViewModel.class);
         binding = FragmentDetalleContratoBinding.inflate(inflater,container,false);
-        Bundle contratoRecuperado = getArguments();
-        detalleContratoViewModel.obtenerDatos( (Contrato) contratoRecuperado.getSerializable("contrato"));
+        Bundle inmuebleRecuperado = getArguments();
+        detalleContratoViewModel.obtenerDatos( (Inmueble) inmuebleRecuperado.getSerializable("inmueble"));
         detalleContratoViewModel.getMutableContrato().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
 
             @Override

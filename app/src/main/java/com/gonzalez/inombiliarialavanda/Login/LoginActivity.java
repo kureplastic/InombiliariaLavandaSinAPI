@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         viewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(LoginActivityViewModel.class);
 
         deteccionMovimiento = new DeteccionMovimiento(this);
-        deteccionMovimiento.startListening();
+        //deteccionMovimiento.startListening();
 
         binding.btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        deteccionMovimiento.startListening();
+        //deteccionMovimiento.startListening();
     }
 
 }

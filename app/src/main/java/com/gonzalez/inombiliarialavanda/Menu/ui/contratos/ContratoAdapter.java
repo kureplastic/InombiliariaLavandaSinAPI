@@ -53,8 +53,8 @@ public class ContratoAdapter extends RecyclerView.Adapter<ContratoAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 Bundle bndl = new Bundle();
-                Contrato contrato = ApiClient.getApi().obtenerContratoVigente(inmueblesAlquilados.get(position));
-                bndl.putSerializable("contrato",contrato);
+                Inmueble inmueble = inmueblesAlquilados.get(position);
+                bndl.putSerializable("inmueble",inmueble);
                 Navigation.findNavController((Activity) context,R.id.nav_host_fragment_content_menu).navigate(R.id.nav_detalleContrato,bndl);
 
             }

@@ -52,8 +52,9 @@ public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.View
             @Override
             public void onClick(View view) {
                 Bundle bndl = new Bundle();
-                Inquilino inquilino = ApiClient.getApi().obtenerInquilino(inmueblesAlquilados.get(position));
-                bndl.putSerializable("inquilino",inquilino);
+                //pasar el inmueblesAlquilados.get(position) en el bndl para realizar desde el otro viewModel el ObtenerInquilino()
+                Inmueble inmueble = inmueblesAlquilados.get(position);
+                bndl.putSerializable("inmueble",inmueble);
                 Navigation.findNavController((Activity) context,R.id.nav_host_fragment_content_menu).navigate(R.id.nav_detalleInquilino,bndl);
 
             }

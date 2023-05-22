@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.gonzalez.inombiliarialavanda.R;
 import com.gonzalez.inombiliarialavanda.databinding.FragmentDetalleInquilinoBinding;
+import com.gonzalez.inombiliarialavanda.modelo.Inmueble;
 import com.gonzalez.inombiliarialavanda.modelo.Inquilino;
 
 public class DetalleInquilinoFragment extends Fragment {
@@ -31,9 +32,9 @@ public class DetalleInquilinoFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         mViewModel = new ViewModelProvider(this).get(DetalleInquilinoViewModel.class);
         binding = FragmentDetalleInquilinoBinding.inflate(inflater,container,false);
-        Bundle inquilinoRecuperado = getArguments();
+        Bundle inmuebleRecuperado = getArguments();
 
-        mViewModel.obtenerDatos( (Inquilino) inquilinoRecuperado.getSerializable("inquilino"));
+        mViewModel.obtenerDatos( (Inmueble) inmuebleRecuperado.getSerializable("inmueble"));
         mViewModel.getMutableInquilino().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {
             @Override
             public void onChanged(Inquilino inquilino) {

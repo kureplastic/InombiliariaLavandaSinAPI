@@ -24,6 +24,10 @@ public class Propietario {
         this.telefono = telefono;
         this.avatar=avatar;
     }
+    public Propietario(String email,String contraseña){
+        this.email = email;
+        this.contraseña = contraseña;
+    }
 
     public int getId() {
         return id;
